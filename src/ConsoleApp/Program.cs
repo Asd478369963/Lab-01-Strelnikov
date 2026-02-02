@@ -1,4 +1,5 @@
 using System;
+using ConsoleApp.Modules;
 
 namespace ConsoleApp
 {
@@ -6,20 +7,19 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите строку для подсчета гласных:");
-            string input = Console.ReadLine();
-            int vowelCount = 0;
-            string vowels = "аеёиоуыэюяАЕЁИОУЫЭЮЯ";
+            // 1. Ввод данных через InputModule
+            string input = InputModule.ReadString("Введите строку для подсчета гласных:");
 
-            foreach (char c in input)
+            // 2. Проверка через ValidationModule
+            if (ValidationModule.IsNotEmpty(input))
             {
-                if (vowels.Contains(c))
-                {
-                    vowelCount++;
-                }
+                // 3. Обработка и вывод через ProcessingModule
+                ProcessingModule.CountAndPrintVowels(input);
             }
-
-            Console.WriteLine($"Количество гласных: {vowelCount}");
+            else
+            {
+                Console.WriteLine("Ошибка: введена пустая строка.");
+            }
         }
     }
 }

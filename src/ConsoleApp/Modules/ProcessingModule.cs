@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-
 namespace ConsoleApp.Modules
 {
     public static class ProcessingModule
@@ -9,7 +8,6 @@ namespace ConsoleApp.Modules
         {
             string vowels = "аеёиоуыэюяАЕЁИОУЫЭЮЯ";
             int vowelCount = 0;
-
             foreach (char c in input)
             {
                 if (vowels.Contains(c))
@@ -17,7 +15,6 @@ namespace ConsoleApp.Modules
                     vowelCount++;
                 }
             }
-
             Console.WriteLine($"Количество гласных: {vowelCount}");
         }
     }

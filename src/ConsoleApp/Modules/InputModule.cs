@@ -1,5 +1,4 @@
 using System;
-
 namespace ConsoleApp.Modules
 {
     public static class InputModule
